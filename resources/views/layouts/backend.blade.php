@@ -29,6 +29,7 @@
     <!-- <link rel="stylesheet" id="css-theme" href="{{ asset('/css/themes/amethyst.css') }}"> -->
     @yield('css_after')
 
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};
@@ -251,18 +252,28 @@
                         </li>
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('order') ? ' active' : '' }}" href="">
-                                <i class="nav-main-link-icon si si-wallet"></i>
-                                <span class="nav-main-link-name">Files</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('albums') ? ' active' : '' }}" href="">
+                            <a class="nav-main-link{{ request()->is('albums') ? ' active' : '' }}"
+                                href="{{ route('albums.index') }}">
                                 <i class="nav-main-link-icon si si-wallet"></i>
                                 <span class="nav-main-link-name">Albums</span>
                             </a>
                         </li>
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('genres') ? ' active' : '' }}" href="">
+                                <i class="nav-main-link-icon si si-wallet"></i>
+                                <span class="nav-main-link-name">Genres</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('songs') ? ' active' : '' }}" href="">
+                                <i class="nav-main-link-icon si si-wallet"></i>
+                                <span class="nav-main-link-name">Songs</span>
+                            </a>
+                        </li>
+
+
 
 
                     </ul>
@@ -331,7 +342,7 @@
                                 <a class="dropdown-item d-flex align-items-center justify-content-between"
                                     href="javascript:void(0)">
                                     <span class="fs-sm fw-medium">Profile</span>
-                                    <span class="badge rounded-pill bg-primary ms-2">1</span>
+
                                 </a>
 
                             </div>
@@ -339,9 +350,14 @@
                             <div class="p-2">
 
                                 <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
+                                    href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">
                                     <span class="fs-sm fw-medium">Log Out</span>
                                 </a>
+
+                                <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                                    @csrf
+
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -404,6 +420,9 @@
 
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ asset('/js/laravel.app.js') }}"></script> -->
+   
+
+    @include('sweetalert::alert')
 
     @yield('js_after')
 </body>

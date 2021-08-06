@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,9 @@ Auth::routes(['register' => false]);
 // Route::match(['get', 'post'], '/dashboard', function(){
 //     return view('dashboard');
 // });
-Route::view('/pages/slick', 'pages.slick');
-Route::view('/pages/datatables', 'pages.datatables');
-Route::view('/pages/blank', 'pages.blank');
+// Route::view('/pages/slick', 'pages.slick');
+// Route::view('/pages/datatables', 'pages.datatables');
+// Route::view('/pages/blank', 'pages.blank');
 
 
 
@@ -31,3 +32,7 @@ Route::view('/pages/blank', 'pages.blank');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('albums', AlbumController::class);
+});
