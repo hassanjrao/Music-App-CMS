@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,8 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('albums', AlbumController::class);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('genres', GenreController::class);
 });
