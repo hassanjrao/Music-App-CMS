@@ -71,6 +71,7 @@
                                     <label class="form-label" for="album_id">Album</label>
                                     <select name="album_id" id="album_id" class="form-select">
                                         <option value="" disabled selected hidden>Select Album</option>
+                                        <option value="" >No Album</option>
                                         @forelse ($albums as $album)
                                             @if ($album->id === $song->album_id)
                                                 <option selected value="{{ $album->id }}"> {{ $album->name }}
