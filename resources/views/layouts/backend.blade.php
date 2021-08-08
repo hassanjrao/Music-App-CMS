@@ -81,7 +81,7 @@
             'sidebar-dark page-header-dark dark-mode'   Enable dark mode (light sidebar/header is not supported with dark mode)
         -->
     <div id="page-container"
-        class="sidebar-o enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
+        class="sidebar-o enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-boxed">
         <!-- Side Overlay-->
         <aside id="side-overlay" class="fs-sm">
             <!-- Side Header -->
@@ -260,14 +260,16 @@
                         </li>
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('genres') ? ' active' : '' }}" href="{{ route("genres.index") }}">
+                            <a class="nav-main-link{{ request()->is('genres') ? ' active' : '' }}"
+                                href="{{ route('genres.index') }}">
                                 <i class="nav-main-link-icon si si-wallet"></i>
                                 <span class="nav-main-link-name">Genres</span>
                             </a>
                         </li>
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('songs') ? ' active' : '' }}" href="">
+                            <a class="nav-main-link{{ request()->is('songs') ? ' active' : '' }}"
+                                href="{{ route('songs.index') }}">
                                 <i class="nav-main-link-icon si si-wallet"></i>
                                 <span class="nav-main-link-name">Songs</span>
                             </a>
@@ -420,7 +422,7 @@
 
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ asset('/js/laravel.app.js') }}"></script> -->
-   
+
 
     @include('sweetalert::alert')
 

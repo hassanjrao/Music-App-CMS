@@ -18,7 +18,7 @@ class CreateSongsTable extends Migration
             $table->unsignedBigInteger("album_id")->nullable();
             $table->foreign("album_id")->references("id")->on("albums");
             $table->string("title");
-            $table->unsignedInteger("genre_id");
+            $table->unsignedBigInteger("genre_id");
             $table->foreign("genre_id")->references("id")->on("genres");
             $table->string("image")->nullable();
             $table->string("description")->nullable();
