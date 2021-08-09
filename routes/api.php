@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SongApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get("songs/{id?}",[SongApiController::class,"index"]);
+Route::get("album/{id}",[SongApiController::class,"getSongAlbum"]);
+Route::get("genre/{id}",[SongApiController::class,"getSongGenre"]);

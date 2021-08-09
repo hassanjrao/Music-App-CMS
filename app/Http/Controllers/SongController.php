@@ -55,14 +55,16 @@ class SongController extends Controller
         ]);
 
 
+
         $request->file('image')->store("public/images/songs/");
         $imageName = $request->file('image')->hashName();
+
 
         $request->file('song')->store("public/files/songs/");
         $fileName = $request->file('song')->hashName();
 
 
-
+        $url = asset("/storage/files/songs/$fileName");
 
         if ($request->check_date === "Later") {
 
@@ -74,7 +76,7 @@ class SongController extends Controller
                 "image" => $imageName,
                 "description" => $request->description,
                 "dj_name" => $request->dj_name,
-                // "streaming_url" => $fileName,
+                "streaming_url" => $url,
                 "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
                 "private" => $request->private === null ? 0 : 1,
                 "published_at" => $request->published_date
@@ -90,7 +92,7 @@ class SongController extends Controller
                 "image" => $imageName,
                 "description" => $request->description,
                 "dj_name" => $request->dj_name,
-                // "streaming_url" => $fileName,
+                "streaming_url" => $url,
                 "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
                 "private" => $request->private === null ? 0 : 1,
 
@@ -157,7 +159,7 @@ class SongController extends Controller
             "published_date" => "required",
         ]);
 
-     
+
 
         $song = Song::findorfail($id);
 
@@ -185,8 +187,13 @@ class SongController extends Controller
             $request->file('song')->store("public/files/songs/");
             $fileName = $request->file('song')->hashName();
 
+
+            $url = asset("/storage/files/songs/$fileName");
+
+
             $song->update([
-                "song" => $fileName
+                "song" => $fileName,
+                "streaming_url" => $url
             ]);
         }
 
@@ -201,19 +208,19 @@ class SongController extends Controller
             "published_at" => $request->published_date
         ]);
 
-      
+
         $tagsArr = explode(",", $request->tags);
 
-       
-        $newTagsArr=[];
+
+        $newTagsArr = [];
         foreach ($tagsArr as $key => $tag) {
 
             $tagR = Tag::firstOrCreate([
                 "tag" => $tag
             ]);
 
-           
-            array_push($newTagsArr,$tagR->id);
+
+            array_push($newTagsArr, $tagR->id);
             // $song->tags()->attach($tagR->id);
         }
 
