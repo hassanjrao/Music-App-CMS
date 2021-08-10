@@ -16,6 +16,13 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+        ini_set('memory_limit','256M');
+         
+     }
+
     public function index()
     {
         $songs = Song::orderBy("id", "desc")->get();
