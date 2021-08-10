@@ -19,7 +19,7 @@ class SongController extends Controller
 
      public function __construct()
      {
-        ini_set('memory_limit','256M');
+        ini_set('memory_limit','50000M');
          
      }
 
