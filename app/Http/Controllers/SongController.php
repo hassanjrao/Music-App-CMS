@@ -102,8 +102,7 @@ class SongController extends Controller
                 "streaming_url" => $url,
                 "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
                 "private" => $request->private === null ? 0 : 1,
-
-
+                "published_at"=>now(),
             ]);
         }
 
