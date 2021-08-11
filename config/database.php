@@ -13,9 +13,17 @@ return [
     | to use as your default connection for all database work. Of course
     | you may use many connections at once using the Database library.
     |
+    host     : db-mysql-nyc3-85614-do-user-9624357-0.b.db.ondigitalocean.com
+port     : 25060
+username : doadmin
+password : i7w0d50unh241out
+database : defaultdb
+sslmode  : REQUIRED
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+
+
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +131,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
