@@ -61,7 +61,9 @@ class SongController extends Controller
 
         ]);
 
-        ini_set('memory_limit','256M');
+        ini_set('memory_limit','5000M');
+        ini_set('upload_max_filesize','5000M');
+        ini_set('post_max_size','5000M');
 
 
 
