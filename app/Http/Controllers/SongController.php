@@ -19,7 +19,7 @@ class SongController extends Controller
 
      public function __construct()
      {
-        ini_set('memory_limit','50000M');
+        
          
      }
 
@@ -60,6 +60,8 @@ class SongController extends Controller
             "check_date" => "required",
 
         ]);
+
+        ini_set('memory_limit','10240M');
 
 
 
