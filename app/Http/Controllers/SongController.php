@@ -61,7 +61,7 @@ class SongController extends Controller
 
         ]);
 
-        ini_set('memory_limit','10240M');
+        ini_set('memory_limit','256M');
 
 
 
