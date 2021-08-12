@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -84,13 +85,13 @@ class GenreController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            "genre"=>"required"
+            "genre" => "required"
         ]);
 
-        $genre=Genre::findorfail($id);
+        $genre = Genre::findorfail($id);
 
         $genre->update([
-            "genre"=>$request->genre
+            "genre" => $request->genre
         ]);
 
         return redirect()->route("genres.index")->withToastSuccess("Updated Succefully");
@@ -106,6 +107,16 @@ class GenreController extends Controller
     {
         //
         $genre = Genre::findorfail($id);
+
+        $songs = Song::where("genre_id", "=", $id)->get();
+
+        foreach ($songs as $key => $song) {
+
+            $song->tags()->detach();
+
+            $song->delete();
+        }
+
 
         $genre->delete();
 

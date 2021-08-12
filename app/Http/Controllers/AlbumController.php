@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Song;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
@@ -111,6 +113,16 @@ class AlbumController extends Controller
     {
         //
         $album=Album::findorfail($id);
+
+        $songs = Song::where("album_id", "=", $id)->get();
+
+        foreach ($songs as $key => $song) {
+
+            $song->tags()->detach();
+        
+            $song->delete();
+        }
+
 
         $album->delete();
 
