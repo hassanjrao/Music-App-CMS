@@ -167,7 +167,7 @@
                                                     <label class="form-label" for="tags">Tags</label>
 
                                                     <input type="text" name="tags" class="form-control tagin"
-                                                        value="css,script,com" data-placeholder="Type and press comma" />
+                                                       data-placeholder="Type and press comma" />
 
                                                  
 
