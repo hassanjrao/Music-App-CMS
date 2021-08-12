@@ -351,7 +351,7 @@
                             <div class="p-2">
 
                                 <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
+                                    href="{{ route('profile.index') }}">
                                     <span class="fs-sm fw-medium">Profile</span>
 
                                 </a>
