@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,15 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('genres', GenreController::class);
 });
 
-Route::middleware(["auth"])->group(function(){
+Route::middleware(["auth"])->group(function () {
     Route::resource('songs', SongController::class);
+});
+
+
+Route::middleware(["auth"])->group(function () {
+
+
+    Route::put('profile/updateUser/{id}', [ProfileController::class, 'updateUser'])->name("profile.updateUser");
+    Route::post('profile/updatePassword/{id}', [ProfileController::class, 'updatePassword'])->name("profile.updatePassword");
+    Route::resource('profile', ProfileController::class);
 });

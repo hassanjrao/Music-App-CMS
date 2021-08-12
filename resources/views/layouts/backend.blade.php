@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>CMS</title>
 
     <meta name="description"
         content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
@@ -138,7 +138,7 @@
                     <span class="smini-visible">
                         <i class="fa fa-circle-notch text-primary"></i>
                     </span>
-                    <span class="smini-hide fs-5 tracking-wider">One<span class="fw-normal">UI</span></span>
+                    <span class="smini-hide fs-5 tracking-wider"><span class="fw-normal">CMS</span></span>
                 </a>
                 <!-- END Logo -->
 
@@ -254,7 +254,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('albums') ? ' active' : '' }}"
                                 href="{{ route('albums.index') }}">
-                                <i class="nav-main-link-icon si si-wallet"></i>
+                                <i class="nav-main-link-icon si si-layers"></i>
                                 <span class="nav-main-link-name">Albums</span>
                             </a>
                         </li>
@@ -262,7 +262,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('genres') ? ' active' : '' }}"
                                 href="{{ route('genres.index') }}">
-                                <i class="nav-main-link-icon si si-wallet"></i>
+                                <i class="nav-main-link-icon si si-magic-wand"></i>
                                 <span class="nav-main-link-name">Genres</span>
                             </a>
                         </li>
@@ -270,8 +270,17 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('songs') ? ' active' : '' }}"
                                 href="{{ route('songs.index') }}">
-                                <i class="nav-main-link-icon si si-wallet"></i>
+                                <i class="nav-main-link-icon si si-music-tone"></i>
                                 <span class="nav-main-link-name">Songs</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('profile') ? ' active' : '' }}"
+                                href="{{ route('profile.index') }}">
+                                <i class="nav-main-link-icon si si-user"></i>
+                                <span class="nav-main-link-name">Profile</span>
                             </a>
                         </li>
 
@@ -403,7 +412,7 @@
                             href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
                     </div>
                     <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-                        <a class="fw-semibold" href="https://1.envato.market/AVD6j" target="_blank">OneUI</a> &copy;
+                        <a class="fw-semibold" href="https://1.envato.market/AVD6j" target="_blank">CMS</a> &copy;
                         <span data-toggle="year-copy"></span>
                     </div>
                 </div>
