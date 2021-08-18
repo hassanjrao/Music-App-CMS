@@ -272,7 +272,7 @@
                                 <tr>
 
                                     <td>
-                                        {{ $index + 1 }}
+                                        {{ $index + 1 }} , {{$song->id}}
                                     </td>
 
                                     <td>
