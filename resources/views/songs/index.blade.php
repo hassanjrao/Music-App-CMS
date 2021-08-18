@@ -243,6 +243,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Song ID</th>
                                 <th>Song</th>
                                 <th>Title</th>
                                 <th>Album</th>
@@ -272,7 +273,11 @@
                                 <tr>
 
                                     <td>
-                                        {{ $index + 1 }} , {{$song->id}}
+                                        {{ $index + 1 }}
+                                    </td>
+
+                                    <td>
+                                        {{$song->id}}
                                     </td>
 
                                     <td>
