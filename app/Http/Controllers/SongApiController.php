@@ -21,7 +21,7 @@ class SongApiController extends Controller
             $song = Song::find($id);
 
             if(!$song){
-                abort(404,message:"Song not found");
+                abort(404,"Song not found");
             }
 
             // if ($song) {
