@@ -323,7 +323,7 @@
                                     </td>
 
                                     <td>
-                                        @if ($song->explicit_lyrics === 1)
+                                        @if ($song->explicit_lyrics == 1)
                                             Yes
                                         @else
                                             No
@@ -331,7 +331,7 @@
 
                                     </td>
                                     <td>
-                                        @if ($song->private === 1)
+                                        @if ($song->private == 1)
                                             Yes
                                         @else
                                             No
