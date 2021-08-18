@@ -28,7 +28,7 @@ class SongApiController extends Controller
                 array_push($songs, [
                     "id" => (string)$song->id,
                     "song" => $song->song,
-                    "album" => $song->album->name === NULL ? "" : $song->album->name,
+                    "album" => $song->album === NULL ? "" : $song->album->name,
                     "title" => $song->title,
                     "genre" => $song->genre->genre,
                     "image" => $song->image,
@@ -51,7 +51,7 @@ class SongApiController extends Controller
                 array_push($songs, [
                     "id" => (string)$song->id,
                     "song" => $song->song,
-                    "album" => $song->album->name === NULL ? "" : $song->album->name,
+                    "album" => $song->album === NULL ? "" : $song->album->name,
                     "title" => $song->title,
                     "genre" => $song->genre->genre,
                     "image" => $song->image,
