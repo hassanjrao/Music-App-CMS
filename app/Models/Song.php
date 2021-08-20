@@ -15,6 +15,7 @@ class Song extends Model
         "title",
         "genre_id",
         "image",
+        "artwork_url",
         "description",
         "dj_name",
         "streaming_url",

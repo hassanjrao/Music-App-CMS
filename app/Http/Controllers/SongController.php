@@ -17,11 +17,6 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct()
-     {
-        
-         
-     }
 
     public function index()
     {
@@ -31,16 +26,6 @@ class SongController extends Controller
 
 
         return view("songs.index", compact("songs", "albums", "genres"));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -61,21 +46,18 @@ class SongController extends Controller
 
         ]);
 
-        ini_set('memory_limit','5000M');
-        ini_set('upload_max_filesize','5000M');
-        ini_set('post_max_size','5000M');
-
-
 
         $request->file('image')->store("public/images/songs/");
         $imageName = $request->file('image')->hashName();
 
+        $artwork_url = asset("/storage/images/songs/$imageName");
 
         $request->file('song')->store("public/files/songs/");
         $fileName = $request->file('song')->hashName();
 
 
-        $url = asset("/storage/files/songs/$fileName");
+        $streaming_url = asset("/storage/files/songs/$fileName");
+
 
         if ($request->check_date === "Later") {
 
@@ -85,9 +67,10 @@ class SongController extends Controller
                 "title" => $request->title,
                 "genre_id" => $request->genre_id,
                 "image" => $imageName,
+                "artwork_url" => $artwork_url,
                 "description" => $request->description,
                 "dj_name" => $request->dj_name,
-                "streaming_url" => $url,
+                "streaming_url" => $streaming_url,
                 "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
                 "private" => $request->private === null ? 0 : 1,
                 "published_at" => $request->published_date
@@ -101,14 +84,16 @@ class SongController extends Controller
                 "title" => $request->title,
                 "genre_id" => $request->genre_id,
                 "image" => $imageName,
+                "artwork_url" => $artwork_url,
                 "description" => $request->description,
                 "dj_name" => $request->dj_name,
-                "streaming_url" => $url,
+                "streaming_url" => $streaming_url,
                 "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
                 "private" => $request->private === null ? 0 : 1,
-                "published_at"=>now(),
+                "published_at" => now(),
             ]);
         }
+
 
         $tagsArr = explode(",", $request->tags);
 
@@ -125,17 +110,6 @@ class SongController extends Controller
         return redirect()->route("songs.index")->withToastSuccess("Successfully Added");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -182,8 +156,12 @@ class SongController extends Controller
             $request->file('image')->store("public/images/songs/");
             $imageName = $request->file('image')->hashName();
 
+            $artwork_url = asset("/storage/images/songs/$imageName");
+
+
             $song->update([
-                "image" => $imageName
+                "image" => $imageName,
+                "artwork_url" => $artwork_url,
             ]);
         }
 
@@ -197,13 +175,12 @@ class SongController extends Controller
             $request->file('song')->store("public/files/songs/");
             $fileName = $request->file('song')->hashName();
 
-
-            $url = asset("/storage/files/songs/$fileName");
+            $streaming_url = asset("/storage/files/songs/$fileName");
 
 
             $song->update([
                 "song" => $fileName,
-                "streaming_url" => $url
+                "streaming_url" => $streaming_url
             ]);
         }
 
