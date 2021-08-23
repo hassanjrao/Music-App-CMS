@@ -70,6 +70,20 @@
                                         </button>
                                     </div>
                                 </div>
+
+                                 <div class="mt-4">
+
+                                            <h4>For testing pupose, admin credentials are:</h4>
+                                            email: admin@m.com <br>
+                                            password: password
+
+
+                                            <br><br>
+                                            <h4>For user, you can create an account</h4>
+                                          
+
+                                            
+                                        </div>
                             </form>
                             <!-- END Sign In Form -->
                         </div>
