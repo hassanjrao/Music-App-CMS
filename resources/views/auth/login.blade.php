@@ -78,9 +78,7 @@
                                             password: password
 
 
-                                            <br><br>
-                                            <h4>For user, you can create an account</h4>
-                                          
+                                            
 
                                             
                                         </div>
