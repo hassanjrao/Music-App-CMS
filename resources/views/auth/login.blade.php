@@ -71,17 +71,7 @@
                                     </div>
                                 </div>
 
-                                 <div class="mt-4">
-
-                                            <h4>For testing pupose, admin credentials are:</h4>
-                                            email: admin@m.com <br>
-                                            password: password
-
-
-                                            
-
-                                            
-                                        </div>
+                               
                             </form>
                             <!-- END Sign In Form -->
                         </div>
