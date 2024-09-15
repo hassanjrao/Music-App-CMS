@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Tag::factory(10)->create();
 
         $this->call(UserSeeder::class);
-      $this->call(AlbumSeeder::class);
-      $this->call(GenreSeeder::class);
-      // $this->call(TagSeeder::class);
-      // $this->call(SongSeeder::class);
-      
+        $this->call(AlbumSeeder::class);
+        $this->call(GenreSeeder::class);
+        $this->call(TagSeeder::class);
+          $this->call(DjSeeder::class);
+
     }
 }

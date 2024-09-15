@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Apis\LoginController;
+use App\Http\Controllers\Apis\SongController;
 use App\Http\Controllers\SongApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +21,21 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get("songs/{id?}",[SongApiController::class,"index"]);
-Route::get("album/{id}",[SongApiController::class,"getSongAlbum"]);
-Route::get("genre/{id}",[SongApiController::class,"getSongGenre"]);
+Route::get("album/{id}", [SongApiController::class, "getSongAlbum"]);
+Route::get("genre/{id}", [SongApiController::class, "getSongGenre"]);
+
+
+Route::prefix("v1")->group(function () {
+
+    Route::post("login", [LoginController::class, "login"]);
+    Route::post("register", [LoginController::class, "register"]);
+    Route::post('forgot-password', [LoginController::class, 'forgotPassword']);
+
+
+
+
+    Route::get('songs', [SongController::class, 'index']);
+    Route::get("songs/{id?}", [SongApiController::class, "index"]);
+
+    Route::middleware(["auth:api", 'checkDriverDeviceIDV4'])->group(function () {});
+});

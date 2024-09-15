@@ -47,52 +47,19 @@ class SongController extends Controller
         ]);
 
 
-        $request->file('image')->store("public/images/songs/");
-        $imageName = $request->file('image')->hashName();
+        $song = Song::create([
+            "song" => $request->file('song')->store("songs/"),
+            "album_id" => $request->album_id,
+            "title" => $request->title,
+            "genre_id" => $request->genre_id,
+            "image" => $request->file('image')->store("images/songs/"),
+            "description" => $request->description,
+            "dj_name" => $request->dj_name,
+            "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
+            "private" => $request->private === null ? 0 : 1,
+            "published_at" => $request->check_date === "Later" ? $request->published_date : now()
 
-        $artwork_url = asset("/storage/images/songs/$imageName");
-
-        $request->file('song')->store("public/files/songs/");
-        $fileName = $request->file('song')->hashName();
-
-
-        $streaming_url = asset("/storage/files/songs/$fileName");
-
-
-        if ($request->check_date === "Later") {
-
-            $song = Song::create([
-                "song" => $fileName,
-                "album_id" => $request->album_id,
-                "title" => $request->title,
-                "genre_id" => $request->genre_id,
-                "image" => $imageName,
-                "artwork_url" => $artwork_url,
-                "description" => $request->description,
-                "dj_name" => $request->dj_name,
-                "streaming_url" => $streaming_url,
-                "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
-                "private" => $request->private === null ? 0 : 1,
-                "published_at" => $request->published_date
-
-            ]);
-        } else {
-            // dd($request->check_date);
-            $song = Song::create([
-                "song" => $fileName,
-                "album_id" => $request->album_id,
-                "title" => $request->title,
-                "genre_id" => $request->genre_id,
-                "image" => $imageName,
-                "artwork_url" => $artwork_url,
-                "description" => $request->description,
-                "dj_name" => $request->dj_name,
-                "streaming_url" => $streaming_url,
-                "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
-                "private" => $request->private === null ? 0 : 1,
-                "published_at" => now(),
-            ]);
-        }
+        ]);
 
 
         $tagsArr = explode(",", $request->tags);

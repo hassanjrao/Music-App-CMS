@@ -71,7 +71,9 @@
                                             <div class="row mb-4">
                                                 <div class="col-12">
                                                     <label class="form-label" for="song">Upload Song</label>
-                                                    <input required type="file" class="form-control" id="song" name="song">
+                                                    <input required type="file" class="form-control" id="song" name="song"
+                                                    accept="audio/*"
+                                                    >
                                                 </div>
 
                                             </div>
@@ -169,7 +171,7 @@
                                                     <input type="text" name="tags" class="form-control tagin"
                                                        data-placeholder="Type and press comma" />
 
-                                                 
+
 
                                                 </div>
 
@@ -282,9 +284,9 @@
 
                                     <td>
                                         <audio controls>
-                                            <source src="{{ asset("/storage/files/songs/$song->song") }}"
+                                            <source src="{{ $song->streaming_url }}"
                                                 type="audio/ogg">
-                                            <source src="{{ asset("/storage/files/songs/$song->song") }}"
+                                            <source src="{{ $song->streaming_url }}"
                                                 type="audio/mpeg">
                                             Your browser does not support the audio tag.
                                         </audio>
@@ -303,7 +305,7 @@
                                     </td>
 
                                     <td>
-                                        <img src="{{ asset("/storage/images/songs/$song->image") }}" alt="song-img"
+                                        <img src="{{ $song->artwork_url }}" alt="song-img"
                                             width="100px" height="100px">
 
                                     </td>
@@ -318,9 +320,9 @@
 
                                     <td >
                                         @forelse ($song->tags as $tag)
-                                            
+
                                                 #{{ $tag->tag }},
-                                            
+
 
                                         @empty
                                             No Tag Found
@@ -479,7 +481,7 @@
             }
         </script>
 
-      
+
     @endsection
 
 @endsection

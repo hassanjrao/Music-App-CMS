@@ -4,27 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Song extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
-        "song",
-        "album_id",
-        "title",
-        "genre_id",
-        "image",
+    protected $guarded=[];
+
+    protected $appends=[
         "artwork_url",
-        "description",
-        "dj_name",
         "streaming_url",
-        "duration",
-        "explicit_lyrics",
-        "song_played",
-        "private",
-        "published_at"
+        'song_url'
     ];
+
+    public function getArtworkUrlAttribute(){
+        return $this->image ? Storage::url($this->image) : null;
+    }
+
+    public function getStreamingUrlAttribute(){
+        return $this->song ? Storage::url($this->song) : null;
+    }
 
     public function album(){
         return $this->belongsTo(Album::class);
@@ -36,5 +36,9 @@ class Song extends Model
 
     public function genre(){
         return $this->belongsTo(Genre::class);
+    }
+
+    public function dj(){
+        return $this->belongsTo(Dj::class,'dj_id');
     }
 }
