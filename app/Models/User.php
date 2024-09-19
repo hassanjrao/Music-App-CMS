@@ -6,11 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +23,19 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_pic',
+        'phone',
+        'date_of_birth',
+        'gender'
     ];
+
+    protected $appends=[
+        "profile_pic_url",
+    ];
+
+    public function getProfilePicUrlAttribute(){
+        return $this->profile_pic ? Storage::url($this->profile_pic) : null;
+    }
 
     /**
      * The attributes that should be hidden for arrays.

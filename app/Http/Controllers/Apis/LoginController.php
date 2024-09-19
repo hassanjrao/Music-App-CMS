@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Apis;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\User as ResourcesUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -29,6 +30,8 @@ class LoginController extends Controller
 
         $token=$user->createToken("token")->plainTextToken;
 
+        $user=ResourcesUser::make($user);
+
         return response([
             'message'=>'Successfully logged in',
             'token'=>$token,
@@ -52,7 +55,12 @@ class LoginController extends Controller
             "password"=>bcrypt($request->password)
         ]);
 
+
+
         $token=$user->createToken("token")->plainTextToken;
+
+
+        $user=ResourcesUser::make($user);
 
         return response([
             'message'=>'Successfully Registered',

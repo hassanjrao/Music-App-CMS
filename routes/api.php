@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Apis\EventPlanningEssentialController;
 use App\Http\Controllers\Apis\LoginController;
 use App\Http\Controllers\Apis\SongController;
 use App\Http\Controllers\SongApiController;
@@ -35,7 +36,8 @@ Route::prefix("v1")->group(function () {
 
 
     Route::get('songs', [SongController::class, 'index']);
-    Route::get("songs/{id?}", [SongApiController::class, "index"]);
+
+    Route::get('event-planning-essentials', [EventPlanningEssentialController::class, 'listing']);
 
     Route::middleware(["auth:api", 'checkDriverDeviceIDV4'])->group(function () {});
 });
