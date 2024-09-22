@@ -40,7 +40,6 @@ class SongController extends Controller
             "song" => "required",
             "title" => "required",
             "genre_id" => "required",
-            "dj_name" => "required",
             "image" => "required",
             "check_date" => "required",
 
@@ -54,7 +53,6 @@ class SongController extends Controller
             "genre_id" => $request->genre_id,
             "image" => $request->file('image')->store("images/songs/"),
             "description" => $request->description,
-            "dj_name" => $request->dj_name,
             "explicit_lyrics" => $request->explicit_lyrics === null ? 0 : 1,
             "private" => $request->private === null ? 0 : 1,
             "published_at" => $request->check_date === "Later" ? $request->published_date : now()
