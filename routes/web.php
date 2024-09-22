@@ -56,3 +56,10 @@ Route::middleware(["auth"])->group(function () {
     Route::post('profile/updatePassword/{id}', [ProfileController::class, 'updatePassword'])->name("profile.updatePassword");
     Route::resource('profile', ProfileController::class);
 });
+
+Route::get('symlink', function () {
+
+    symlink('/var/www/html/gte/storage/app/public', '/var/www/html/gte/public/storage');
+
+    return 'Symlink process successfully completed';
+});
