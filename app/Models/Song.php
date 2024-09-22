@@ -39,6 +39,6 @@ class Song extends Model
     }
 
     public function dj(){
-        return $this->belongsTo(Dj::class,'dj_id')->withDefault();
+        return $this->belongsTo(DJ::class,'dj_id')->withDefault();
     }
 }
