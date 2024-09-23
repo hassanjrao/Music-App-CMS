@@ -14,7 +14,7 @@ class AddTimeStartInEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            // $table->dropColumn('time');
+            $table->dropColumn('time');
             $table->time('time_start')->after('date');
             $table->time('time_end')->after('time_start');
         });
