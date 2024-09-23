@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            RoleSeeder::class,
-            UserSeeder::class,
-            AlbumSeeder::class,
-            GenreSeeder::class,
-            TagSeeder::class,
-            DjSeeder::class,
-            EventPlanningEssentialSeeder::class,
+            // RoleSeeder::class,
+            // UserSeeder::class,
+            // AlbumSeeder::class,
+            // GenreSeeder::class,
+            // TagSeeder::class,
+            // DjSeeder::class,
+            // EventPlanningEssentialSeeder::class,
             ServiceSeeder::class,
             StaffSeeder::class,
             EventSeeder::class,
