@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 
-class Service extends Model
+class Staff extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $table='staffs';
 
     protected $guarded=[];
 

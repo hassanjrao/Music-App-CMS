@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
             TagSeeder::class,
             DjSeeder::class,
             EventPlanningEssentialSeeder::class,
+            ServiceSeeder::class,
+            StaffSeeder::class,
+            EventSeeder::class,
         ]);
     }
 }
