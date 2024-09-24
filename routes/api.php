@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Apis\AppointmentFocusController;
 use App\Http\Controllers\Apis\EventController;
 use App\Http\Controllers\Apis\EventPlanningEssentialController;
 use App\Http\Controllers\Apis\LoginController;
+use App\Http\Controllers\Apis\MeetingController;
 use App\Http\Controllers\Apis\ServiceController;
 use App\Http\Controllers\Apis\SongController;
 use App\Http\Controllers\Apis\StaffController;
@@ -44,6 +46,15 @@ Route::prefix("v1")->group(function () {
     Route::get('event-planning-essentials', [EventPlanningEssentialController::class, 'listing']);
     Route::get('events', [EventController::class, 'index']);
 
+    Route::get('appointment-focuses',[AppointmentFocusController::class,'index']);
 
-    Route::middleware(["auth:api", 'checkDriverDeviceIDV4'])->group(function () {});
+    Route::get('settings',[LoginController::class,'settings']);
+
+
+    Route::middleware(["auth:sanctum"])->group(function () {
+
+        Route::get('meetings', [MeetingController::class, 'index']);
+        Route::post('meetings/create', [MeetingController::class, 'create']);
+
+    });
 });

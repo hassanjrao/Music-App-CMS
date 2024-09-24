@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Apis;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User as ResourcesUser;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -94,6 +95,18 @@ class LoginController extends Controller
             'message'=>'A password reset link has been sent to your email'
         ]);
 
+    }
+
+    public function settings(){
+        $settings=Setting::first();
+
+        $settings->working_days=json_decode($settings->working_days);
+
+        return response([
+            'data'=>[
+                'settings'=>$settings
+            ]
+        ]);
     }
 
 
