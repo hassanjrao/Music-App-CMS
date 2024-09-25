@@ -6,6 +6,7 @@ use App\Http\Controllers\Apis\EventPlanningEssentialController;
 use App\Http\Controllers\Apis\LoginController;
 use App\Http\Controllers\Apis\MeetingController;
 use App\Http\Controllers\Apis\ServiceController;
+use App\Http\Controllers\Apis\ServiceRequestController;
 use App\Http\Controllers\Apis\SongController;
 use App\Http\Controllers\Apis\StaffController;
 use App\Http\Controllers\SongApiController;
@@ -49,6 +50,8 @@ Route::prefix("v1")->group(function () {
     Route::get('appointment-focuses',[AppointmentFocusController::class,'index']);
 
     Route::get('settings',[LoginController::class,'settings']);
+
+    Route::post('services/request',[ServiceRequestController::class,'create']);
 
 
     Route::middleware(["auth:sanctum"])->group(function () {
