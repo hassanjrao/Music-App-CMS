@@ -16,6 +16,7 @@ class EventPlanningEssential extends JsonResource
     {
         return [
             'id' => (string)$this->id,
+            'is_featured' => $this->is_featured ? true : false,
             'title' => $this->title,
             'description' => $this->description,
             'video_url' => $this->video_url,
