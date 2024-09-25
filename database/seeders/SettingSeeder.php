@@ -14,11 +14,14 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-        Setting::create([
+        Setting::updateOrCreate([
+            'id' => 1,
+        ], [
+            'id' => 1,
             // working_days json column
-            'working_days'=>json_encode(['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']),
-            'start_time'=>'09:00',
-            'end_time'=>'17:00',
+            'working_days' => json_encode(['Monday', 'Tuesday', 'Wednesday', 'Thursday']),
+            'start_time' => '09:00',
+            'end_time' => '17:00',
         ]);
     }
 }
