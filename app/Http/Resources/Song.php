@@ -18,7 +18,9 @@ class Song extends JsonResource
             'id' => (string)$this->id,
             'song_url' => $this->streaming_url,
             'title' => $this->title,
+            'subtitle' => $this->subtitle,
             'cover_image' => $this->artwork_url,
+            'thumbnail' => $this->thumbnail_url,
             'dj' => $this->relationLoaded('dj') ? $this->dj : null,
             'published_at' => $this->published_at,
         ];

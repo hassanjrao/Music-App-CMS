@@ -15,8 +15,13 @@ class Song extends Model
     protected $appends=[
         "artwork_url",
         "streaming_url",
-        'song_url'
+        'song_url',
+        'thumbnail_url'
     ];
+
+    public function getThumbnailUrlAttribute(){
+        return $this->thumbnail ? Storage::url($this->thumbnail) : null;
+    }
 
     public function getArtworkUrlAttribute(){
         return $this->image ? Storage::url($this->image) : null;
