@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             // ServiceSeeder::class,
             // StaffSeeder::class,
             // EventSeeder::class,
+            AppointmentFocusSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }
