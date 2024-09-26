@@ -277,14 +277,20 @@
 
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('profile') ? ' active' : '' }}"
-                                href="{{ route('profile.index') }}">
+                            <a class="nav-main-link{{ request()->is('users') ? ' active' : '' }}"
+                                href="{{ route('users.index') }}">
                                 <i class="nav-main-link-icon si si-user"></i>
-                                <span class="nav-main-link-name">Profile</span>
+                                <span class="nav-main-link-name">Users</span>
                             </a>
                         </li>
 
-
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('djs') ? ' active' : '' }}"
+                                href="{{ route('djs.index') }}">
+                                <i class="nav-main-link-icon si si-user"></i>
+                                <span class="nav-main-link-name">DJs</span>
+                            </a>
+                        </li>
 
 
                     </ul>
@@ -361,7 +367,8 @@
                             <div class="p-2">
 
                                 <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">
+                                    href="javascript:void(0)"
+                                    onclick="document.getElementById('logout-form').submit()">
                                     <span class="fs-sm fw-medium">Log Out</span>
                                 </a>
 
@@ -427,13 +434,68 @@
 
             Core libraries and functionality
         -->
+
+    <script src="{{ asset('js/lib/jquery.min.js') }}"></script>
     <script src="{{ asset('js/oneui.app.js') }}"></script>
 
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ asset('/js/laravel.app.js') }}"></script> -->
 
+        <!-- Page JS Plugins -->
+        <script src="{{ asset('js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-bs5/dataTables.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-buttons/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-buttons/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-buttons/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-buttons/buttons.flash.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/datatables-buttons/buttons.colVis.min.js') }}"></script>
+        {{-- <script src="assets/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script> --}}
+        <script src="{{ asset('js/plugins/jquery.maskedinput/jquery.maskedinput.min.js') }}"></script>
 
+
+        <!-- Page JS Code -->
+        <script src="{{ asset('js/pages/tables_datatables.js') }}"></script>
+
+
+        <script src="{{ asset('js/plugins/select2/js/select2.full.min.js') }}"></script>
+
+        <script src="{{ asset('js/plugins/dropzone/min/dropzone.min.js') }}"></script>
+
+
+    <script>
+        One.helpersOnLoad(['jq-select2']);
+    </script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @include('sweetalert::alert')
+
+
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $("#form-" + id).submit();
+
+
+                    // Swal.fire(
+                    //     'Deleted!',
+                    //     'Your file has been deleted.',
+                    //     'success'
+                    // )
+                }
+            })
+        }
+    </script>
 
     @yield('js_after')
 </body>

@@ -56,6 +56,7 @@ class LoginController extends Controller
             "password"=>bcrypt($request->password)
         ]);
 
+        $user->assignRole("user");
 
 
         $token=$user->createToken("token")->plainTextToken;
