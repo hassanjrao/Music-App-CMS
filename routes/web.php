@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDjController;
+use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminSongController;
@@ -68,6 +69,7 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('event-planning-essentials', AdminEventPlanningEssentialController::class);
     Route::resource('services', AdminServiceController::class);
     Route::resource('staffs', AdminStaffController::class);
+    Route::resource('events', AdminEventController::class);
 
 });
 

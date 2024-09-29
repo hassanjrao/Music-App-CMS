@@ -314,7 +314,16 @@
 
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('users') ? ' active' : '' }}"
+                            <a class="nav-main-link{{ request()->is('events*') ? ' active' : '' }}"
+                                href="{{ route('events.index') }}">
+                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <span class="nav-main-link-name">Events</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('users*') ? ' active' : '' }}"
                                 href="{{ route('users.index') }}">
                                 <i class="nav-main-link-icon si si-user"></i>
                                 <span class="nav-main-link-name">Users</span>
