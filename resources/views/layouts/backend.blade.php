@@ -321,6 +321,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('appointment-focuses*') ? ' active' : '' }}"
+                                href="{{ route('appointment-focuses.index') }}">
+                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <span class="nav-main-link-name">Appointment Focuses</span>
+                            </a>
+                        </li>
+
 
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('users*') ? ' active' : '' }}"

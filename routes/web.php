@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAppointmentFocusController;
 use App\Http\Controllers\AdminDjController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
@@ -70,6 +71,7 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('services', AdminServiceController::class);
     Route::resource('staffs', AdminStaffController::class);
     Route::resource('events', AdminEventController::class);
+    Route::resource('appointment-focuses', AdminAppointmentFocusController::class);
 
 });
 
