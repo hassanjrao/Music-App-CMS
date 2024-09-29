@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" id="css-main" href="{{ asset('/css/oneui.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('js/plugins/datatables-bs5/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/plugins/datatables-buttons-bs5/buttons.bootstrap5.min.css') }}">
+
+
     <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="{{ asset('/css/themes/amethyst.css') }}"> -->
     @yield('css_after')
@@ -251,7 +255,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-main-item open">
+                        {{-- <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('albums') ? ' active' : '' }}"
                                 href="{{ route('albums.index') }}">
                                 <i class="nav-main-link-icon si si-layers"></i>
@@ -265,6 +269,14 @@
                                 <i class="nav-main-link-icon si si-magic-wand"></i>
                                 <span class="nav-main-link-name">Genres</span>
                             </a>
+                        </li> --}}
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('djs') ? ' active' : '' }}"
+                                href="{{ route('djs.index') }}">
+                                <i class="nav-main-link-icon si si-user"></i>
+                                <span class="nav-main-link-name">DJs</span>
+                            </a>
                         </li>
 
                         <li class="nav-main-item open">
@@ -272,6 +284,14 @@
                                 href="{{ route('songs.index') }}">
                                 <i class="nav-main-link-icon si si-music-tone"></i>
                                 <span class="nav-main-link-name">Songs</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('event-planning-essentials/*') ? ' active' : '' }}"
+                                href="{{ route('event-planning-essentials.index') }}">
+                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <span class="nav-main-link-name">Event Planning Essentials</span>
                             </a>
                         </li>
 
@@ -284,13 +304,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('djs') ? ' active' : '' }}"
-                                href="{{ route('djs.index') }}">
-                                <i class="nav-main-link-icon si si-user"></i>
-                                <span class="nav-main-link-name">DJs</span>
-                            </a>
-                        </li>
+
 
 
                     </ul>

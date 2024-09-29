@@ -69,9 +69,9 @@
 
                                     <td>{{ $user->created_at }}</td>
                                     {{-- <td>{{ $user->updated_at }}</td> --}}
-
+  {{--
                                     <td>
-                                        {{-- <form id="form-{{ $user->id }}"
+                                       <form id="form-{{ $user->id }}"
                                             action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
@@ -80,8 +80,9 @@
                                                 <i class="fa fa-trash"></i>
                                             </button>
 
-                                        </form> --}}
+                                        </form>
                                     </td>
+                                    --}}
 
 
                                 </tr>
