@@ -12,10 +12,10 @@
                     <div class="block-header block-header-default">
                         <h3 class="block-title">Sign In</h3>
                         <div class="block-options">
-                           
+
 
                             @if (Route::has('password.request'))
-                                   
+
                                     <a class="btn-block-option fs-sm" href="{{ route('password.request') }}">Forgot Password?</a>
                                 @endif
                             {{-- <a class="btn-block-option" href="{{ route('register') }}" data-bs-toggle="tooltip" data-bs-placement="left" title="New Account">
@@ -71,17 +71,6 @@
                                     </div>
                                 </div>
 
-                                 <div class="mt-4">
-
-                                            <h4>For testing pupose, admin credentials are:</h4>
-                                            email: admin@m.com <br>
-                                            password: password
-
-
-                                            
-
-                                            
-                                        </div>
                             </form>
                             <!-- END Sign In Form -->
                         </div>
@@ -91,7 +80,7 @@
             </div>
         </div>
         <div class="fs-sm text-muted text-center">
-            <strong>OneUI 5.0</strong> &copy; <span data-toggle="year-copy"></span>
+            <strong>{{ config('app.name') }}</strong> &copy; <span data-toggle="year-copy"></span>
         </div>
     </div>
 </div>

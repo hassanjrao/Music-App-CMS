@@ -5,12 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>CMS</title>
+    <title>@yield('page-title') - {{ config('app.name') }}</title>
 
-    <meta name="description"
-        content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
-    <meta name="author" content="pixelcave">
-    <meta name="robots" content="noindex, nofollow">
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -142,7 +139,7 @@
                     <span class="smini-visible">
                         <i class="fa fa-circle-notch text-primary"></i>
                     </span>
-                    <span class="smini-hide fs-5 tracking-wider"><span class="fw-normal">CMS</span></span>
+                    <span class="smini-hide fs-5 tracking-wider"><span class="fw-normal"> {{ config('app.name') }}</span></span>
                 </a>
                 <!-- END Logo -->
 
@@ -459,20 +456,7 @@
         <!-- END Main Container -->
 
         <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
-            <div class="content py-3">
-                <div class="row fs-sm">
-                    <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end">
-                        Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold"
-                            href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
-                    </div>
-                    <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-                        <a class="fw-semibold" href="https://1.envato.market/AVD6j" target="_blank">CMS</a> &copy;
-                        <span data-toggle="year-copy"></span>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
         <!-- END Footer -->
     </div>
     <!-- END Page Container -->
