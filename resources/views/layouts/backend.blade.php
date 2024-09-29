@@ -305,6 +305,15 @@
 
 
                         <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('staffs*') ? ' active' : '' }}"
+                                href="{{ route('staffs.index') }}">
+                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <span class="nav-main-link-name">Staffs</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('users') ? ' active' : '' }}"
                                 href="{{ route('users.index') }}">
                                 <i class="nav-main-link-icon si si-user"></i>
