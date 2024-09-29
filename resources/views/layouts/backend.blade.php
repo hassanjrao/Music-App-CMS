@@ -274,7 +274,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('djs') ? ' active' : '' }}"
                                 href="{{ route('djs.index') }}">
-                                <i class="nav-main-link-icon si si-user"></i>
+                                <i class="nav-main-link-icon fa fa-headphones"></i>
                                 <span class="nav-main-link-name">DJs</span>
                             </a>
                         </li>
@@ -282,7 +282,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('songs') ? ' active' : '' }}"
                                 href="{{ route('songs.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-music"></i>
                                 <span class="nav-main-link-name">Songs</span>
                             </a>
                         </li>
@@ -290,7 +290,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('event-planning-essentials*') ? ' active' : '' }}"
                                 href="{{ route('event-planning-essentials.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-eye"></i>
                                 <span class="nav-main-link-name">Event Planning Essentials</span>
                             </a>
                         </li>
@@ -298,7 +298,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('services*') ? ' active' : '' }}"
                                 href="{{ route('services.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-cogs"></i>
                                 <span class="nav-main-link-name">Services</span>
                             </a>
                         </li>
@@ -307,7 +307,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('staffs*') ? ' active' : '' }}"
                                 href="{{ route('staffs.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-wrench"></i>
                                 <span class="nav-main-link-name">Staffs</span>
                             </a>
                         </li>
@@ -316,7 +316,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('events*') ? ' active' : '' }}"
                                 href="{{ route('events.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-calendar"></i>
                                 <span class="nav-main-link-name">Events</span>
                             </a>
                         </li>
@@ -324,7 +324,7 @@
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('appointment-focuses*') ? ' active' : '' }}"
                                 href="{{ route('appointment-focuses.index') }}">
-                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <i class="nav-main-link-icon fa fa-umbrella"></i>
                                 <span class="nav-main-link-name">Appointment Focuses</span>
                             </a>
                         </li>
