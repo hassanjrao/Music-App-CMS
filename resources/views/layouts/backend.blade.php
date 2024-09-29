@@ -288,10 +288,18 @@
                         </li>
 
                         <li class="nav-main-item open">
-                            <a class="nav-main-link{{ request()->is('event-planning-essentials/*') ? ' active' : '' }}"
+                            <a class="nav-main-link{{ request()->is('event-planning-essentials*') ? ' active' : '' }}"
                                 href="{{ route('event-planning-essentials.index') }}">
                                 <i class="nav-main-link-icon si si-music-tone"></i>
                                 <span class="nav-main-link-name">Event Planning Essentials</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('services*') ? ' active' : '' }}"
+                                href="{{ route('services.index') }}">
+                                <i class="nav-main-link-icon si si-music-tone"></i>
+                                <span class="nav-main-link-name">Services</span>
                             </a>
                         </li>
 

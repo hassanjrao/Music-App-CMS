@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminDjController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
+use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminSongController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AlbumController;
@@ -64,6 +65,8 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('songs', AdminSongController::class);
 
     Route::resource('event-planning-essentials', AdminEventPlanningEssentialController::class);
+    Route::resource('services', AdminServiceController::class);
+
 });
 
 Route::get('symlink', function () {
