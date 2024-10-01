@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\ServiceRequest;
 use Illuminate\Http\Request;
 
 class AdminServiceController extends Controller
@@ -17,6 +18,17 @@ class AdminServiceController extends Controller
         $services=Service::latest()->get();
 
         return view('services.index',compact('services'));
+    }
+
+    public function requests(Request $request){
+
+        $serviceRequests=ServiceRequest::latest()
+            ->when($request->service_id,function($q) use($request){
+                $q->where('service_id',$request->service_id);
+            })
+        ->get();
+
+        return view('services.requests',compact('serviceRequests'));
     }
 
     /**

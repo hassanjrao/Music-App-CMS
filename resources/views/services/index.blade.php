@@ -65,6 +65,10 @@
                                     <td>{{ $service->updated_at }}</td>
 
                                     <td>
+                                        <a href="{{ route('services.requests', ['service_id'=>$service->id]) }}" class="btn btn-sm btn-primary"
+                                            data-toggle="tooltip" title="View Requests">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
                                         <a href="{{ route('services.edit', $service->id) }}" class="btn btn-sm btn-primary"
                                             data-toggle="tooltip" title="Edit">
                                             <i class="fa fa-pencil-alt"></i>

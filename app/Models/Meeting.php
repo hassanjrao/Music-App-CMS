@@ -13,10 +13,10 @@ class Meeting extends Model
     protected $guarded=[];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     public function appointmentFocus(){
-        return $this->belongsTo(AppointmentFocus::class);
+        return $this->belongsTo(AppointmentFocus::class)->withDefault();
     }
 }

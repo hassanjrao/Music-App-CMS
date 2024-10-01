@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminAppointmentFocusController;
 use App\Http\Controllers\AdminDjController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
+use App\Http\Controllers\AdminMeetingController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminSongController;
 use App\Http\Controllers\AdminStaffController;
@@ -68,10 +69,12 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('songs', AdminSongController::class);
 
     Route::resource('event-planning-essentials', AdminEventPlanningEssentialController::class);
+    Route::get('services/requests', [AdminServiceController::class, 'requests'])->name('services.requests');
     Route::resource('services', AdminServiceController::class);
     Route::resource('staffs', AdminStaffController::class);
     Route::resource('events', AdminEventController::class);
     Route::resource('appointment-focuses', AdminAppointmentFocusController::class);
+    Route::resource('meetings',AdminMeetingController::class)->only(['index','show','destroy']);
 
 });
 

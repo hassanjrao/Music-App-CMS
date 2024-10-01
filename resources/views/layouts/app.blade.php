@@ -4,11 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
+        <title>@yield('page-title') - {{ config('app.name') }}</title>
 
-        <meta name="description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
-        <meta name="author" content="pixelcave">
-        <meta name="robots" content="noindex, nofollow">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -75,10 +72,10 @@
             'sidebar-dark page-header-dark dark-mode'   Enable dark mode (light sidebar/header is not supported with dark mode)
         -->
         <div id="page-container">
-         
-         
-         
-          
+
+
+
+
             <!-- END Header -->
 
             <!-- Main Container -->
@@ -88,7 +85,7 @@
             <!-- END Main Container -->
 
             <!-- Footer -->
-          
+
             <!-- END Footer -->
         </div>
         <!-- END Page Container -->

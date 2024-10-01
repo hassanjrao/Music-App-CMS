@@ -300,6 +300,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('services/requests*') ? ' active' : '' }}"
+                                href="{{ route('services.requests') }}">
+                                <i class="nav-main-link-icon fa fa-cogs"></i>
+                                <span class="nav-main-link-name">Services Requests</span>
+                            </a>
+                        </li>
+
 
                         <li class="nav-main-item open">
                             <a class="nav-main-link{{ request()->is('staffs*') ? ' active' : '' }}"
@@ -323,6 +331,14 @@
                                 href="{{ route('appointment-focuses.index') }}">
                                 <i class="nav-main-link-icon fa fa-umbrella"></i>
                                 <span class="nav-main-link-name">Appointment Focuses</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('meetings*') ? ' active' : '' }}"
+                                href="{{ route('meetings.index') }}">
+                                <i class="nav-main-link-icon fa fa-handshake"></i>
+                                <span class="nav-main-link-name">Meetings</span>
                             </a>
                         </li>
 
