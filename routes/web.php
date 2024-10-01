@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes(['register' => false, 'reset' => false]);
+Auth::routes(['register' => false]);
 
 // Example Routes
 // Route::view('/', 'landing');
