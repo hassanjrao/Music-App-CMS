@@ -1,5 +1,7 @@
 @extends('layouts.backend')
 
+@section('page-title','Dashboard')
+
 @section('content')
     <div class="content">
         <div class="row row-deck">
@@ -44,7 +46,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-calendar-alt fa-2x"></i>
+                                <i class="fa fa-headphones fa-2x"></i>
 
                             </div>
                         </div>
@@ -74,7 +76,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-music fa-2x"></i>
 
                             </div>
                         </div>
@@ -104,7 +106,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-eye fa-2x"></i>
 
                             </div>
                         </div>
@@ -135,7 +137,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-cogs fa-2x"></i>
 
                             </div>
                         </div>
@@ -166,7 +168,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-cogs fa-2x"></i>
 
                             </div>
                         </div>
@@ -197,7 +199,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-wrench fa-2x"></i>
 
                             </div>
                         </div>
@@ -228,7 +230,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-calendar fa-2x"></i>
 
                             </div>
                         </div>
@@ -258,7 +260,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-umbrella fa-2x"></i>
 
                             </div>
                         </div>
@@ -289,7 +291,7 @@
                             </dl>
                             <div class="item item-rounded-lg bg-body-light">
 
-                                <i class="fas fa-tags fa-2x"></i>
+                                <i class="fa fa-handshake fa-2x"></i>
 
                             </div>
                         </div>
