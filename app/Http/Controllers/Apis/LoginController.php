@@ -110,5 +110,51 @@ class LoginController extends Controller
         ]);
     }
 
+    public function updateProfile(Request $request){
+
+        $request->validate([
+            "name"=>"required",
+            "email"=>"required|email|unique:users,email,".auth()->id(),
+            "password"=>"nullable|min:8",
+            'phone'=>'required',
+            'gender'=>'nullable|in:male,female',
+            'date_of_birth'=>'nullable|date',
+            'profile_pic'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048'
+        ]);
+
+
+        $user=auth()->user();
+
+        $dataToUpdate=[
+            "name"=>$request->name,
+            "email"=>$request->email,
+            "phone"=>$request->phone,
+        ];
+
+        if($request->password){
+            $dataToUpdate['password']=bcrypt($request->password);
+        }
+
+        if($request->hasFile('profile_pic')){
+            $dataToUpdate['profile_pic']=$request->file('profile_pic')->store('profile_pics');
+        }
+
+        if($request->gender){
+            $dataToUpdate['gender']=$request->gender;
+        }
+
+        if($request->date_of_birth){
+            $dataToUpdate['date_of_birth']=$request->date_of_birth;
+        }
+
+        $user->update($dataToUpdate);
+
+        return response([
+            'message'=>'Updated successfully',
+            'user'=>ResourcesUser::make($user)
+        ]);
+
+    }
+
 
 }

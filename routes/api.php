@@ -59,5 +59,7 @@ Route::prefix("v1")->group(function () {
         Route::get('meetings', [MeetingController::class, 'index']);
         Route::post('meetings/create', [MeetingController::class, 'create']);
 
+        Route::post('profile/update', [LoginController::class, 'updateProfile']);
+
     });
 });
