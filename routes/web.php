@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
 use App\Http\Controllers\AdminMeetingController;
 use App\Http\Controllers\AdminServiceController;
+use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\AdminSongController;
 use App\Http\Controllers\AdminStaffController;
 use App\Http\Controllers\AdminUserController;
@@ -75,6 +76,7 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('events', AdminEventController::class);
     Route::resource('appointment-focuses', AdminAppointmentFocusController::class);
     Route::resource('meetings',AdminMeetingController::class)->only(['index','show','destroy']);
+    Route::resource('settings',AdminSettingController::class)->only(['index','update']);
 
 });
 

@@ -351,6 +351,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item open">
+                            <a class="nav-main-link{{ request()->is('settings*') ? ' active' : '' }}"
+                                href="{{ route('settings.index') }}">
+                                <i class="nav-main-link-icon fa fa-lock"></i>
+                                <span class="nav-main-link-name">Settings</span>
+                            </a>
+                        </li>
+
 
 
 
