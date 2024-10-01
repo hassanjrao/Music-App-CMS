@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAppointmentFocusController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminDjController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminEventPlanningEssentialController;
@@ -77,6 +78,9 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('appointment-focuses', AdminAppointmentFocusController::class);
     Route::resource('meetings',AdminMeetingController::class)->only(['index','show','destroy']);
     Route::resource('settings',AdminSettingController::class)->only(['index','update']);
+
+
+    Route::get('dashboard',[AdminDashboardController::class,'index'])->name('dashboard');
 
 });
 
