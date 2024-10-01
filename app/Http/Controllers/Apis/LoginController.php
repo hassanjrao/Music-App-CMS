@@ -83,9 +83,9 @@ class LoginController extends Controller
 
         if(!$user){
             return response([
-                "message"=>"User not found",
+                "message"=>"User with email $request->email not found in our system",
                 'errors'=>[
-                    'email'=>['User not found']
+                    'email'=>["User with email $request->email not found in our system"]
                 ]
             ],404);
         }
