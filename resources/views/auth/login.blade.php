@@ -16,7 +16,7 @@
 
                             @if (Route::has('password.request'))
 
-                                    <a class="btn-block-option fs-sm" href="{{ route('password.request') }}">Forgot Password?</a>
+                                    {{-- <a class="btn-block-option fs-sm" href="{{ route('password.request') }}">Forgot Password?</a> --}}
                                 @endif
                             {{-- <a class="btn-block-option" href="{{ route('register') }}" data-bs-toggle="tooltip" data-bs-placement="left" title="New Account">
                                 <i class="fa fa-user-plus"></i>
