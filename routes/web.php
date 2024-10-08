@@ -31,30 +31,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
-// Example Routes
-// Route::view('/', 'landing');
-// Route::match(['get', 'post'], '/dashboard', function(){
-//     return view('dashboard');
-// });
-// Route::view('/pages/slick', 'pages.slick');
-// Route::view('/pages/datatables', 'pages.datatables');
-// Route::view('/pages/blank', 'pages.blank');
-
-
-
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('albums', AlbumController::class);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('genres', GenreController::class);
-});
-
 
 Route::middleware(["auth"])->group(function () {
 
@@ -80,7 +56,7 @@ Route::middleware(["auth"])->group(function () {
     Route::resource('settings',AdminSettingController::class)->only(['index','update']);
 
 
-    Route::get('dashboard',[AdminDashboardController::class,'index'])->name('dashboard');
+    Route::get('',[AdminDashboardController::class,'index'])->name('dashboard');
 
 });
 
